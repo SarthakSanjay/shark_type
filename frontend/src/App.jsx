@@ -6,7 +6,12 @@ import Footer from './components/Footer'
 
 const App = () => {
   const [display , setDisplay] = useState(false)
-  const hiddenInputRef = useRef();
+  const inputRef = useRef();
+
+  const handleButtonClick = () => {
+    // Focus on the input element to open the keyboard
+    inputRef.current.focus();
+  };
   const handleKeyPress = (event) =>{
     if(event.key === 'Enter'){
       setDisplay(true)
@@ -14,12 +19,7 @@ const App = () => {
   }
 
   useEffect(()=>{
-    const dummyInput = hiddenInputRef.current;
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    if (isMobile) {
-      dummyInput.focus();
-    }
-    hiddenInputRef.current.click();
+
       document.addEventListener('keypress' , handleKeyPress)
       return () =>{
         document.addEventListener('keypress' , handleKeyPress)
@@ -31,11 +31,12 @@ const App = () => {
     <Logo />
     <HighestWPM />
     <input
-        ref={hiddenInputRef}
+        ref={inputRef}
         type="text"
         className='absolute opacity-0 pointer-events-none'
       />
         {display ? <DisplayArea  /> : <h1 className='text-3xl text-gray-400'>Press <span className='animate-pulse bg-gray-900 px-2 border rounded-lg'>Enter</span> to start</h1>}
+        <button className='absolute bottom-16 bg-purple-500 text-white mb-5 py-1 px-2 rounded-md border' onClick={handleButtonClick}>Open Keyboard</button>
         <Footer />
     </div>
   )
