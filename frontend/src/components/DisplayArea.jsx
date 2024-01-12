@@ -84,7 +84,7 @@ function DisplayArea() {
   }
   
   function TextArea (){
-    return  <div id='textarea' className='text-3xl text-center text-gray-500 w-screen p-10 relative bottom-20'>
+    return  <div  id='textarea' className='text-3xl text-center text-gray-500 w-screen p-10 relative bottom-20'>
     {sentence.split('').map((letter,index)=>{
       return <span className='relative' id={index} key={index}>{letter}</span>
     })}
