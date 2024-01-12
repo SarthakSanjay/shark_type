@@ -14,6 +14,11 @@ const App = () => {
   }
 
   useEffect(()=>{
+    const dummyInput = hiddenInputRef.current;
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if (isMobile) {
+      dummyInput.focus();
+    }
     hiddenInputRef.current.click();
       document.addEventListener('keypress' , handleKeyPress)
       return () =>{
