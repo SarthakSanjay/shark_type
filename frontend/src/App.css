@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Genos&family=Merriweather+Sans&display=swap');
+
 @keyframes blink {
   0% {
     opacity: 1;
@@ -12,4 +14,14 @@
 
 .cursor {
   animation: blink 1s infinite;
+}
+#textarea{
+  font-family: 'Genos', sans-serif;
+}
+#logo{
+  font-family: 'Merriweather Sans', sans-serif;
+}
+#wpm{
+  font-family: 'Genos', sans-serif;
+
 }
