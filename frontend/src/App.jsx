@@ -23,7 +23,7 @@ const App = () => {
     <div className='h-screen w-screen flex flex-col justify-center items-center bg-gray-800'>
     <Logo />
     <HighestWPM />
-        {display ? <DisplayArea  /> : <h1 className='text-3xl text-gray-400'>Press Enter to start</h1>}
+        {display ? <DisplayArea  /> : <h1 className='text-3xl text-gray-400'>Press <span className='animate-pulse bg-gray-900 px-2 border rounded-lg'>Enter</span> to start</h1>}
         <Footer />
     </div>
   )
