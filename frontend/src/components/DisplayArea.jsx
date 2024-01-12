@@ -20,6 +20,7 @@ function DisplayArea() {
   let start = new Date().getTime()
 
   const handleKeyPress = (event) =>{
+    setIsExploding(false)
     if(event.key === 'Enter') return
     setInterval(()=>{
         timer++
